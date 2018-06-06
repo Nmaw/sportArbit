@@ -1,0 +1,29 @@
+[bets]
+1xbet: true
+fonbet: true
+ligastavok: false
+
+[1xbet]
+url: key_test_bfx
+sec: sec_test_bfx
+buy: 0.002
+sel: 0.001
+
+[fonbet]
+url: key_test_pnx
+sec: sec_test_pnx
+buy: 0.0025
+sel: 0.0015
+
+[ligastavok]
+url: key_test_kkn
+sec: sec_test_kkn
+buy: 0.0025
+sel: 0.0015
+
+[margin]
+percentage: 1
+
+[logs]
+path: logs
+logsfile: main.log
