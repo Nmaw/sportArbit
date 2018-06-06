@@ -1,5 +1,9 @@
-ToDo:
-- STEM - https://jarroba.com/anonymous-scraping-by-tor-network/
-- Telegram info
-- Telegram Bot
--
+#TODO:
+1. Notify:
+   - email
+   - telegram
+   - etc.
+2. Bot:
+   - Telegram
+3. etc...
+   
