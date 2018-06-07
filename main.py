@@ -17,7 +17,7 @@ def main():
     logger.info('Config sections: {}.'.format(Config.get_config(id_conf, 'all')))
     logger.info('Config sections: {}.'.format(Config.get_config(id_conf, 'default')))
     # proxy = get_proxy()
-    # database = SQLite()
+    database = SQLite().create_db(logger)
 
 
 if __name__ == '__main__':
