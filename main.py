@@ -9,14 +9,15 @@ from modules.proxy import *
 
 def main():
     config = 'main.cfg'
-    id_conf, logfile = Config().config_load(config)
+    id_conf, logfile = Config().load_config(config)
     logger = Logger().load_logger(logfile)
 
     logger.info('*********************************************************************************')
     logger.info('SportArbit starting | LogsFile: {} | ConfigFile: {} '.format(logfile, config))
-
-    proxy = get_proxy()
-    database = SQLite()
+    logger.info('Config sections: {}.'.format(Config.get_config(id_conf, 'all')))
+    logger.info('Config sections: {}.'.format(Config.get_config(id_conf, 'default')))
+    # proxy = get_proxy()
+    # database = SQLite()
 
 
 if __name__ == '__main__':

@@ -11,17 +11,13 @@ class Config:
         pass
 
     @staticmethod
-    def config_load(config_file):
-
+    def load_config(config_file):
         # Load Config File
         config = ConfigParser()
         try:
             config.read(config_file)
-            path_log_file = config['logs']['path']
             log_file = config['logs']['file']
-
-            return config, '{}/{}'.format(path_log_file, log_file)
-
+            return config, '{}/{}'.format('logs', log_file)
         except NoSectionError:
             print('No Config File Found! Exit.')
             sys.exit()
@@ -33,15 +29,7 @@ class Config:
         if section == 'all':
             return config.sections()
 
-        # Check active bets
-        elif section == 'bets':
-            bets = []
-            for bet in config[section]:
-                if config[section][bet] == 'true':
-                    bet = {'db': bet, 'url': config[bet]['url']}
-                    bets.append(bet)
-            return bets
-
-        # Check current margin
-        elif section == 'margin':
-            return config[section]['percentage']
+        # Check config
+        elif section == 'default':
+            params = [{'db': config[section]['db'], 'margin': config[section]['margin']}]
+            return params
