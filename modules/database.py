@@ -33,7 +33,8 @@ class SQLite:
         logger.info('Database {} was created with connect {} and cursor {}'.format(dbfile, conn, cursor))
 
         try:
-            cursor.execute('CREATE TABLE IF NOT EXISTS stats (pair text, period real, volume real, PRIMARY KEY(pair ASC));')
+            cursor.execute('CREATE TABLE IF NOT EXISTS stats (pair text, period real, volume real, PRIMARY KEY(pair '
+                           'ASC));')
         except sqlite3.DatabaseError as err:
             logger.error('Error: {} create tables in database: {} '.format(err, dbfile))
             sys.exit()
